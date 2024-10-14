@@ -10,6 +10,7 @@ export default function Login() {
     const [password, setPassword] = useState('')
     const [isRegister, setIsRegister] = useState(false)
     const [authenticating, setAuthenticating] = useState(false)
+    const [status,setSatus]=useState('')
 
     const { signup, login } = useAuth()
 
@@ -17,6 +18,13 @@ export default function Login() {
         
         
         if (!email || !password || password.length < 6) {
+
+            if(!email||!password){
+                setSatus('empty')
+            }
+            else if (password.length < 6) {
+                setSatus('short')
+            }
             return
         }
         setAuthenticating(true)
@@ -50,6 +58,8 @@ export default function Login() {
             <div className='max-w-[400px] w-full mx-auto'>
                 <Button clickHandler={handleSubmit} text={authenticating ? 'Submitting' : "Submit"} full />
             </div>
+            <p className='text-center text-red-500'>{status==='empty'?'Please fill all the fields':''}</p>
+            <p className='text-center text-red-500'>{status==='short'?'Password must be at least 6 characters':''}</p>
             <p className='text-center'>{isRegister ? 'Already have an account? ' : 'Don\'t have an account? '}<button onClick={() => setIsRegister(!isRegister)} className='text-indigo-600'>{isRegister ? 'Sign in' : 'Sign up'}</button></p>
         </div>
     )

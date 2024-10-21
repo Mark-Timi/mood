@@ -16,3 +16,84 @@
     transform: translate(3px, 3px);
     box-shadow: 0px 0px 1px 1px lavender;
 }
+
+
+
+
+
+
+
+
+
+#mirror { 
+  width: 200px;
+  height: 400px;
+  position: relative;
+}
+
+#robotinmirror{
+  clip-path: circle(50%);
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background: linear-gradient(30deg, #fff 20%, #8bc0da 50%, #fff 60%, #8bc0da 79%, #fff 100%);
+}
+
+#robotinmirror svg { 
+  margin:50px 0px 0px 15px;
+  opacity:0.5;
+}
+
+#robot {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -50px;
+  left: -80px;
+  z-index: 10;
+}
+
+svg{width: 200px;}
+.st0{fill:#B26B6B;}
+.st1{fill:#FFFFFF;}
+.st2{fill:#B3B3B3;}
+.st3{fill:#222222;}
+.st4{fill:#F2F2F2;}
+.robotcolor{fill:#844343;}
+
+.antenna{
+  animation-direction: alternate;
+ 	animation: move 4s infinite;
+ 	}
+
+.head{
+  animation-direction: alternate;
+ 	animation: move1 4s infinite;
+  transform-origin: center;
+ 	}
+
+.eye{
+  animation-direction: alternate;
+ 	animation: move2 4s infinite;
+ 	}
+
+@keyframes move {
+  0%    { transform: translateY(0px);}
+  20%   { transform: translateY(40px);}
+  40%   { transform: translateY(0px);}
+  100%  { transform: translateY(0px);}
+}
+
+@keyframes move1 {
+  0%    { transform: rotate(0deg) translateY(0px); }
+  20%   { transform: rotate(-8deg) translateY(0px); }
+  40%   { transform: rotate(8deg) translateY(0px); }
+  60%   { transform: rotate(0deg) translateY(0px); }
+}
+
+@keyframes move2 {
+  0%    { transform: translate(0px, 0px);}
+  20%   { transform: translate(20px, 30px);}
+  40%   { transform: translate(-20px, -30px);}
+  100%  { transform: translate(0px, 0px);}
+}

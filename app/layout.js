@@ -1,4 +1,4 @@
-import { Fugaz_One, Open_Sans } from "next/font/google";
+import { Fugaz_One, Open_Sans} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { AuthProvider } from "@/context/AuthContext";
@@ -7,6 +7,7 @@ import Logout from "@/components/Logout";
 
 const opensans = Open_Sans({ subsets: ["latin"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ['400'] });
+
 
 export const metadata = {
   title: "Mood",
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
   )
 
   const footer = (
-    <footer className="p-4 sm:p-8 grid place-items-center">
+    <footer className="sm:p-1 grid place-items-center">
       <Link href={'https://nfthomeland.github.io/'} target="_blank" className="">
         <p className={'text-indigo-500 duration-200 hover:text-white hover:bg-indigo-500  ' + fugaz.className}>NFT 🕹️</p>
       </Link>
